@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Flexbox Layout Demo</title>
+
+<style>
+
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+/* Header */
+header {
+    background: #0b5394;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+/* FLEX NAVBAR */
+nav {
+    display: flex;
+    justify-content: space-between;
+    background: #333;
+    padding: 15px 25px;
+    color: white;
+}
+
+nav .logo {
+    font-weight: bold;
+    font-size: 20px;
+}
+
+nav .menu {
+    display: flex;
+    gap: 20px;
+}
+
+/* FLEX MAIN LAYOUT */
+main {
+    display: flex;
+    padding: 20px;
+    gap: 20px;
+}
+
+/* FLEX ITEMS */
+.box {
+    flex: 1;
+    background: #f4f4f4;
+    padding: 30px;
+    border-radius: 10px;
+}
+
+/* FLEX CARD SECTION */
+.card-container {
+    display: flex;
+    justify-content: space-around;
+    padding: 20px;
+}
+
+.card {
+    background: #de470c;
+    color: white;
+    padding: 25px;
+    width: 180px;
+    text-align: center;
+    border-radius: 10px;
+}
+
+/* CENTER USING FLEX */
+.center-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 180px;
+    background: #e2e2e2;
+    font-size: 22px;
+}
+
+/* Footer */
+footer {
+    background: #222;
+    color: white;
+    text-align: center;
+    padding: 15px;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+
+    main {
+        flex-direction: column;
+    }
+
+    .card-container {
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+    }
+
+    nav {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+    <h1>GoQuest Project</h1>
+    <p>Cab Booking & Real-Time Tracking System</p>
+</header>
+
+<!-- Flex Navbar -->
+<nav>
+    <div class="logo">GoQuest</div>
+    <div class="menu">
+        <div>Home</div>
+        <div>Features</div>
+        <div>Pricing</div>
+        <div>Contact</div>
+    </div>
+</nav>
+
+<!-- Main Flex Layout -->
+<main>
+    <div class="box">
+        <h2>About GoQuest</h2>
+        <p>
+        GoQuest is a smart cab booking system that allows users to book rides,
+        track drivers in real time, and estimate fares automatically.
+        </p>
+    </div>
+
+    <div class="box">
+        <h2>Key Features</h2>
+        <ul>
+            <li>Real-time GPS tracking</li>
+            <li>Dynamic fare estimation</li>
+            <li>Driver & passenger modules</li>
+            <li>Ride history</li>
+        </ul>
+    </div>
+</main>
+
+<!-- Flex Cards -->
+<section class="card-container">
+    <div class="card">
+        <h3>Economy</h3>
+        <p>Affordable daily rides</p>
+    </div>
+
+    <div class="card">
+        <h3>Luxury</h3>
+        <p>Premium comfort rides</p>
+    </div>
+
+    <div class="card">
+        <h3>Delivery</h3>
+        <p>Send packages easily</p>
+    </div>
+</section>
+
+<!-- Centered Section -->
+<section class="center-section">
+    Flexbox makes layouts simple and responsive
+</section>
+
+<footer>
+    <p>© 2026 GoQuest | All Rights Reserved</p>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: Arial, sans-serif;
+    }
+    header {
+        background: #0d9424;
+        color: white;
+        text-align: center;
+        padding: 20px;
+    }
+    nav {
+        background: #de470c;
+        text-align: center;
+        padding: 10px;
+    }
+    nav a {
+        color: white;
+        margin: 0 15px;
+        text-decoration: none;
+        font-weight: bold;
+    }
+    main {
+        display: flex;
+        padding: 20px;
+        gap: 20px;
+    }
+    section {
+        flex: 3;
+    }
+    article {
+        background: #f4f4f4;
+        padding: 15px;
+        margin-bottom: 15px;
+        border-radius: 8px;
+    }
+    aside {
+        flex: 1;
+        background: #e2e2e2;
+        padding: 15px;
+        border-radius: 8px;
+    }
+    footer {
+        background: #222;
+        color: white;
+        text-align: center;
+        padding: 15px;
+    }
+    @media (max-width: 768px) {
+        main {
+            flex-direction: column;
+        }
+        nav a {
+            display: block;
+            margin: 10px 0;
+        }
+    }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>My Website</h1>
+        <p>Welcome to my responsive semantic webpage</p>
+    </header>
+    <nav>
+        <a href="#">Home</a>
+        <a href="#">About</a>
+        <a href="#">Services</a>
+        <a href="#">Contact</a>
+    </nav>
+    <main>
+        <section>
+            <h2>Latest Articles</h2>
+            <article>
+                <h3>Article One</h3>
+                <p>This is the first article</p>
+            </article>
+            <article>
+                <h3>Article Two</h3>
+                <p>This is the second article</p>
+            </article>
+        </section>
+        <aside>
+            <h3>Sidebar</h3>
+            <p>This is related to the information</p>
+        </aside>
+    </main>
+    <footer>
+        <p>© 2026 My Website</p>
+    </footer>
+</body>
+</html>

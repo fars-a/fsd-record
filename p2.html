@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Semantic Webpage with Animations</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+header {
+    background: #0d9424;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    animation: slideDown 1s ease;
+}
+
+@keyframes slideDown {
+    from {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+nav {
+    background: #de470c;
+    padding: 10px;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s, transform 0.3s;
+}
+
+nav a:hover {
+    color: yellow;
+    transform: scale(1.2);
+}
+
+main {
+    display: flex;
+    padding: 20px;
+    gap: 20px;
+}
+
+section {
+    flex: 3;
+}
+
+article {
+    background: #f4f4f4;
+    padding: 15px;
+    margin-bottom: 15px;
+    border-radius: 8px;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+article:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+aside {
+    flex: 1;
+    background: #e2e2e2;
+    padding: 15px;
+    border-radius: 8px;
+    animation: fadeIn 2s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+footer {
+    background: #222;
+    color: white;
+    text-align: center;
+    padding: 15px;
+}
+
+@media (max-width: 768px) {
+
+    main {
+        flex-direction: column;
+    }
+
+    nav ul {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    nav ul li {
+        margin: 10px 0;
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+    <h1>My Website</h1>
+    <p>Responsive Semantic Page with Animations</p>
+</header>
+
+<nav>
+    <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Services</a></li>
+        <li><a href="#">Contact</a></li>
+    </ul>
+</nav>
+
+<main>
+
+    <section>
+        <h2>Latest Articles</h2>
+
+        <article>
+            <h3>Article One</h3>
+            <p>This is the first article.</p>
+        </article>
+
+        <article>
+            <h3>Article Two</h3>
+            <p>This is the second article.</p>
+        </article>
+
+    </section>
+
+    <aside>
+        <h3>Sidebar</h3>
+        <p>This is related information.</p>
+    </aside>
+
+</main>
+
+<footer>
+    <p>© 2026 My Website</p>
+</footer>
+
+</body>
+</html>
