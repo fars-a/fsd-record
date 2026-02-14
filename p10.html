@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Dropdown Content Rendering</title>
+
+<style>
+body {
+    font-family: Arial;
+    padding: 40px;
+}
+
+select {
+    padding: 10px;
+    width: 200px;
+    margin-bottom: 20px;
+}
+
+#content {
+    padding: 20px;
+    background: #f4f4f4;
+    border-radius: 8px;
+    width: 300px;
+}
+</style>
+</head>
+
+<body>
+
+<h2>Select Course</h2>
+
+<select id="dropdown" onchange="showContent()">
+    <option value="">-- Choose --</option>
+    <option value="html">HTML</option>
+    <option value="css">CSS</option>
+    <option value="js">JavaScript</option>
+</select>
+
+<div id="content">Content will appear here</div>
+
+<script>
+function showContent() {
+
+    let value = document.getElementById("dropdown").value;
+    let content = document.getElementById("content");
+
+    if (value === "html") {
+        content.innerHTML = "HTML is used to structure web pages.";
+    }
+    else if (value === "css") {
+        content.innerHTML = "CSS is used to style web pages.";
+    }
+    else if (value === "js") {
+        content.innerHTML = "JavaScript is used to add interactivity.";
+    }
+    else {
+        content.innerHTML = "Content will appear here";
+    }
+}
+</script>
+
+</body>
+</html>
