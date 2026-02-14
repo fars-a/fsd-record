@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Dynamic Search Filter</title>
+
+<style>
+body {
+    font-family: Arial;
+    padding: 40px;
+}
+
+#search {
+    padding: 10px;
+    width: 250px;
+    margin-bottom: 20px;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+li {
+    padding: 8px;
+    background: #f4f4f4;
+    margin-bottom: 5px;
+}
+</style>
+</head>
+
+<body>
+
+<h2>Search Students</h2>
+
+<input type="text" id="search" placeholder="Type to search...">
+
+<ul id="list">
+    <li>Alice</li>
+    <li>Bob</li>
+    <li>Charlie</li>
+    <li>David</li>
+    <li>Emma</li>
+    <li>Farsan</li>
+</ul>
+
+<script>
+const searchBox = document.getElementById("search");
+const items = document.querySelectorAll("#list li");
+
+searchBox.addEventListener("keyup", function() {
+
+    let value = searchBox.value.toLowerCase();
+
+    items.forEach(function(item) {
+
+        if (item.textContent.toLowerCase().includes(value)) {
+            item.style.display = "block";   // show match
+        } else {
+            item.style.display = "none";    // hide non-match
+        }
+
+    });
+});
+</script>
+
+</body>
+</html>
