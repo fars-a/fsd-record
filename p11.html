@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Student Details using JSON</title>
+
+<style>
+body {
+    font-family: Arial;
+    padding: 40px;
+}
+
+#output {
+    background: #f4f4f4;
+    padding: 20px;
+    width: 300px;
+    border-radius: 8px;
+}
+</style>
+</head>
+
+<body>
+
+<h2>Student Details</h2>
+
+<div id="output"></div>
+
+<script>
+// JSON object
+let student = {
+    "name": "Farsan",
+    "age": 21,
+    "grade": "A"
+};
+
+// Display immediately
+document.getElementById("output").innerHTML =
+    "Name: " + student.name + "<br>" +
+    "Age: " + student.age + "<br>" +
+    "Grade: " + student.grade;
+</script>
+
+</body>
+</html>
