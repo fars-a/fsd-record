@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Registration Form</title>
+
+<style>
+body { 
+    font-family: Arial; 
+    padding: 40px; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+input {
+    display: block; 
+    margin: 10px 0; 
+    padding: 8px; 
+    width: 250px; 
+}
+button { 
+    padding: 10px 20px; 
+}
+.registration-container{
+    border-radius: 10px;
+    background-color: rgb(47, 201, 114);
+    width: 320px;
+    padding: 25px;
+}
+</style>
+</head>
+<body>
+<div class="registration-container">
+<h2>Registration Form</h2>
+
+<form onsubmit="return validateForm()">
+    <input type="text" id="name" placeholder="Name">
+    <input type="text" id="email" placeholder="Email">
+    <input type="password" id="password" placeholder="Password">
+    <input type="password" id="confirm" placeholder="Confirm Password">
+    <input type="text" id="phone" placeholder="Phone Number">
+    <button type="submit">Register</button>
+</form>
+</div>
+<script>
+function validateForm() {
+
+    let name = document.getElementById("name").value.trim();
+    let email = document.getElementById("email").value.trim();
+    let password = document.getElementById("password").value;
+    let confirm = document.getElementById("confirm").value;
+    let phone = document.getElementById("phone").value.trim();
+
+    let emailPattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
+    let phonePattern = /^[0-9]{10}$/;
+
+    if (name === "") {
+        alert("Name is required");
+        return false;
+    }
+
+    if (!email.match(emailPattern)) {
+        alert("Enter a valid email");
+        return false;
+    }
+
+    if (password.length < 6) {
+        alert("Password must be at least 6 characters");
+        return false;
+    }
+
+    if (password !== confirm) {
+        alert("Passwords do not match");
+        return false;
+    }
+
+    if (!phone.match(phonePattern)) {
+        alert("Enter valid 10-digit phone number");
+        return false;
+    }
+
+    alert("Registration Successful!");
+    return true;
+}
+</script>
+
+</body>
+</html>
