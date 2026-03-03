@@ -55,6 +55,11 @@ renderProducts();
 
 // Delete Product
 window.deleteProduct = function (id) {
+  let loggedInUser = JSON.parse(localStorage.getItem("loggedInUser")) || null;
+  if (!loggedInUser || loggedInUser.role !== "admin") {
+    alert("Unauthorized!");
+    return;
+  }
   if (confirm("Are you sure you want to delete this product?")) {
     let products = JSON.parse(localStorage.getItem("products")) || [];
     products = products.filter(p => p.id !== id);
@@ -63,33 +68,24 @@ window.deleteProduct = function (id) {
   }
 }
 
-// Edit Product prompts
+// Edit Product redirects to edit page
 window.editProduct = function (id) {
-  let products = JSON.parse(localStorage.getItem("products")) || [];
-  let productIndex = products.findIndex(p => p.id === id);
-
-  if (productIndex === -1) return;
-
-  let newName = prompt("Enter new product name:", products[productIndex].name);
-  if (newName === null) return; // cancelled
-
-  let newPrice = prompt("Enter new product price (₹):", products[productIndex].price);
-  if (newPrice === null) return; // cancelled
-
-  if (newName.trim() === "" || newPrice.trim() === "") {
-    alert("Name and Price cannot be empty!");
+  let loggedInUser = JSON.parse(localStorage.getItem("loggedInUser")) || null;
+  if (!loggedInUser || loggedInUser.role !== "admin") {
+    alert("Unauthorized!");
     return;
   }
-
-  products[productIndex].name = newName.trim();
-  products[productIndex].price = newPrice.trim();
-
-  localStorage.setItem("products", JSON.stringify(products));
-  renderProducts();
+  window.location.href = `edit-product.html?id=${id}`;
 }
 
 document.getElementById("addProductForm")?.addEventListener("submit", function (e) {
   e.preventDefault();
+
+  let loggedInUser = JSON.parse(localStorage.getItem("loggedInUser")) || null;
+  if (!loggedInUser || loggedInUser.role !== "admin") {
+    alert("Unauthorized action!");
+    return;
+  }
 
   let name = document.getElementById("pname").value;
   let price = document.getElementById("price").value;
@@ -106,4 +102,59 @@ document.getElementById("addProductForm")?.addEventListener("submit", function (
 
   alert("Product added!");
   window.location.href = "products.html";
+});
+
+document.getElementById("editProductForm")?.addEventListener("submit", function (e) {
+  e.preventDefault();
+
+  let loggedInUser = JSON.parse(localStorage.getItem("loggedInUser")) || null;
+  if (!loggedInUser || loggedInUser.role !== "admin") {
+    alert("Unauthorized action!");
+    return;
+  }
+
+  let id = document.getElementById("editProductId").value;
+  let name = document.getElementById("editPname").value;
+  let price = document.getElementById("editPrice").value;
+
+  let products = JSON.parse(localStorage.getItem("products")) || [];
+  let productIndex = products.findIndex(p => p.id == id);
+
+  if (productIndex !== -1) {
+    products[productIndex].name = name;
+    products[productIndex].price = price;
+    localStorage.setItem("products", JSON.stringify(products));
+    alert("Product updated!");
+    window.location.href = "products.html";
+  }
+});
+
+// Page Load Checks
+document.addEventListener("DOMContentLoaded", () => {
+  let currentUrl = window.location.href.toLowerCase();
+
+  // Protect admin pages
+  if (currentUrl.includes("add-products.html") || currentUrl.includes("edit-product.html")) {
+    let loggedInUser = JSON.parse(localStorage.getItem("loggedInUser")) || null;
+    if (!loggedInUser || loggedInUser.role !== "admin") {
+      alert("Access Denied. Admins only.");
+      window.location.href = "login.html";
+      return;
+    }
+  }
+
+  // Fill edit product form if on edit page
+  if (currentUrl.includes("edit-product.html")) {
+    let params = new URLSearchParams(window.location.search);
+    let id = params.get("id");
+    if (id) {
+      let products = JSON.parse(localStorage.getItem("products")) || [];
+      let product = products.find(p => p.id == id);
+      if (product) {
+        document.getElementById("editProductId").value = product.id;
+        document.getElementById("editPname").value = product.name;
+        document.getElementById("editPrice").value = product.price;
+      }
+    }
+  }
 });
