@@ -30,8 +30,9 @@
       <form id="editProductForm">
         <input type="hidden" id="editProductId">
         <input type="text" id="editPname" class="form-control mb-3" placeholder="Product Name" required>
-        <input type="number" step="0.01" min="0" id="editPrice" class="form-control mb-4" placeholder="Price (₹)"
+        <input type="number" step="0.01" min="0" id="editPrice" class="form-control mb-3" placeholder="Price (₹)"
           required>
+        <input type="file" id="editPImage" accept="image/*" class="form-control mb-4">
 
         <button class="btn btn-primary w-100">Update Product</button>
       </form>

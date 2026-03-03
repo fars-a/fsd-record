@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Simple Suggestion</title>
+</head>
+<body>
+
+    <h2>Suggestion Form</h2>
+
+    <input type="text" id="name" placeholder="Your Name"><br><br>
+    <input type="text" id="suggestion" placeholder="Your Suggestion"><br><br>
+
+    <button onclick="sendData()">Submit</button>
+
+    <p id="response"></p>
+
+    <script src="{{ url_for('static', filename='simple.js') }}"></script>
+
+</body>
+</html>

@@ -1,9 +1,5 @@
-/* ===== Base Theme ===== */
-
 body {
     background-color: #f6f5f0;
-    /* warm paper tone */
-    /* Add the checked journal style background */
     background-image:
         linear-gradient(#e4e0d7 1px, transparent 1px),
         linear-gradient(90deg, #e4e0d7 1px, transparent 1px);
@@ -12,13 +8,11 @@ body {
     color: #2f2b2b;
 }
 
-/* subtle texture feeling */
 .container {
-    padding-top: 60px;
+    padding-top: 10px;
     padding-bottom: 60px;
 }
 
-/* Headings */
 h1,
 h2,
 h3,
@@ -29,26 +23,44 @@ h5 {
     color: #1a1818;
 }
 
-/* Navbar - Minimal Editorial */
 .navbar {
-    background-color: transparent !important;
+    background-color: #f6f5f0 !important;
     border-bottom: 2px solid #2f2b2b;
-    /* Thicker solid line for editorial feel */
-    padding-top: 15px;
-    padding-bottom: 15px;
-    margin-bottom: 30px;
+    padding: 0 !important;
+    margin-bottom: 20px;
+    height: 80px;
+}
+
+.navbar .container,
+.navbar .container-fluid {
+    padding: 0 !important;
+    height: 30px;
+    display: flex;
+    align-items: center;
 }
 
 .navbar-brand {
     font-family: 'Playfair Display', serif;
-    font-size: 1.8rem;
+    font-size: 2.1rem !important;
     font-weight: 700;
     color: #1a1818 !important;
     text-transform: lowercase;
     font-style: italic;
+    margin: 0 !important;
+    padding: 0 !important;
+    line-height: 30px;
 }
 
-/* Buttons */
+.navbar .btn {
+    padding: 0px 8px !important;
+    font-size: 1.00rem !important;
+    height: 22px;
+    line-height: 20px;
+    margin: 0 4px 0 0 !important;
+    display: inline-flex;
+    align-items: center;
+}
+
 .btn-primary {
     background-color: #2f2b2b;
     color: #f6f5f0;
@@ -59,7 +71,6 @@ h5 {
     text-transform: uppercase;
     font-weight: 600;
     border-radius: 0;
-    /* Sharp corners for aesthetics */
     transition: all 0.3s ease;
 }
 
@@ -80,7 +91,6 @@ h5 {
     color: #f6f5f0 !important;
 }
 
-/* Override existing generated classes for consistency with user changes */
 .material-btn,
 .btn-success,
 .btn-warning {
@@ -102,18 +112,12 @@ h5 {
     transform: none !important;
 }
 
-/* ===== Journal Card Style ===== */
-
 .card {
     background-color: #fdfdfc;
-    /* crisp white inner */
     border: 1px solid #2f2b2b;
-    /* stark black borders */
     border-radius: 0;
-    /* sharp edges */
     padding: 30px;
     box-shadow: 6px 6px 0px rgba(47, 43, 43, 1);
-    /* solid offset shadow for retro look */
     transition: all 0.2s ease;
 }
 
@@ -124,14 +128,12 @@ h5 {
     background: #fdfdfc;
 }
 
-/* subtle lift */
 .card:hover,
 .material-card:hover {
     transform: translate(-3px, -3px);
     box-shadow: 9px 9px 0px rgba(47, 43, 43, 1) !important;
 }
 
-/* Product title */
 .card h5,
 .card-title {
     font-family: 'Playfair Display', serif;
@@ -142,7 +144,6 @@ h5 {
     padding-bottom: 10px;
 }
 
-/* Description */
 .card p,
 .card-text {
     color: #5a5550;
@@ -151,7 +152,6 @@ h5 {
     font-family: 'Inter', sans-serif;
 }
 
-/* Price */
 .price {
     font-family: 'Playfair Display', serif;
     font-size: 1.2rem;
@@ -160,7 +160,6 @@ h5 {
     font-style: italic;
 }
 
-/* Form Styling - Soft Journal Lines */
 .form-control,
 .material-input {
     background-color: transparent;
@@ -179,7 +178,6 @@ h5 {
     background-color: rgba(255, 255, 255, 0.4);
 }
 
-/* Cart total */
 .cart-total {
     font-family: 'Playfair Display', serif;
     font-size: 1.6rem;

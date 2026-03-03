@@ -1,3 +1,12 @@
+function getBase64(file) {
+  return new Promise((resolve, reject) => {
+    const reader = new FileReader();
+    reader.readAsDataURL(file);
+    reader.onload = () => resolve(reader.result);
+    reader.onerror = error => reject(error);
+  });
+}
+
 function renderProducts() {
   let products = JSON.parse(localStorage.getItem("products")) || [];
   let loggedInUser = JSON.parse(localStorage.getItem("loggedInUser")) || null;
@@ -16,11 +25,15 @@ function renderProducts() {
             `;
     }
 
+    let imgContent = product.image
+      ? `<img src="${product.image}" class="mb-3" style="height:180px; object-fit:cover; border-radius:14px; width:100%;">`
+      : `<div class="mb-3" style="height:180px; background:#e8e2d8; border-radius:14px;"></div>`;
+
     output += `
 <div class="col-md-4 mb-5">
   <div class="card shadow-sm h-100 d-flex flex-column">
 
-    <div class="mb-3" style="height:180px; background:#e8e2d8; border-radius:14px;"></div>
+    ${imgContent}
 
     <h5 class="card-title">${product.name}</h5>
 
@@ -30,10 +43,6 @@ function renderProducts() {
 
     <div class="d-flex justify-content-between align-items-center mt-3">
         <span class="price">₹${product.price}</span>
-        <button onclick="addToCart(${product.id})"
-                class="btn btn-primary rounded-pill btn-sm">
-            Add
-        </button>
     </div>
     ${adminControls}
   </div>
@@ -78,7 +87,7 @@ window.editProduct = function (id) {
   window.location.href = `edit-product.html?id=${id}`;
 }
 
-document.getElementById("addProductForm")?.addEventListener("submit", function (e) {
+document.getElementById("addProductForm")?.addEventListener("submit", async function (e) {
   e.preventDefault();
 
   let loggedInUser = JSON.parse(localStorage.getItem("loggedInUser")) || null;
@@ -89,13 +98,20 @@ document.getElementById("addProductForm")?.addEventListener("submit", function (
 
   let name = document.getElementById("pname").value;
   let price = document.getElementById("price").value;
+  let imageFile = document.getElementById("pImage")?.files[0];
+
+  let base64Image = null;
+  if (imageFile) {
+    base64Image = await getBase64(imageFile);
+  }
 
   let products = JSON.parse(localStorage.getItem("products")) || [];
 
   products.push({
     id: Date.now(),
     name,
-    price
+    price,
+    image: base64Image
   });
 
   localStorage.setItem("products", JSON.stringify(products));
@@ -104,7 +120,7 @@ document.getElementById("addProductForm")?.addEventListener("submit", function (
   window.location.href = "products.html";
 });
 
-document.getElementById("editProductForm")?.addEventListener("submit", function (e) {
+document.getElementById("editProductForm")?.addEventListener("submit", async function (e) {
   e.preventDefault();
 
   let loggedInUser = JSON.parse(localStorage.getItem("loggedInUser")) || null;
@@ -117,12 +133,21 @@ document.getElementById("editProductForm")?.addEventListener("submit", function 
   let name = document.getElementById("editPname").value;
   let price = document.getElementById("editPrice").value;
 
+  let imageFile = document.getElementById("editPImage")?.files[0];
+  let base64Image = null;
+  if (imageFile) {
+    base64Image = await getBase64(imageFile);
+  }
+
   let products = JSON.parse(localStorage.getItem("products")) || [];
   let productIndex = products.findIndex(p => p.id == id);
 
   if (productIndex !== -1) {
     products[productIndex].name = name;
     products[productIndex].price = price;
+    if (base64Image) {
+      products[productIndex].image = base64Image;
+    }
     localStorage.setItem("products", JSON.stringify(products));
     alert("Product updated!");
     window.location.href = "products.html";
