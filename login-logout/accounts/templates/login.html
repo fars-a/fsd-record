@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+    {% load static %}
+<head>
+    <title>Login</title>
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+</head>
+<body>
+    <div class="container">
+        <h2>Login</h2>
+        {% if error %}
+            <p class="error">{{ error }}</p>
+        {% endif %}
+        <form method="post">
+            {% csrf_token %}
+            <input type="text" name="username" placeholder="Username" required>
+            <input type="password" name="password" placeholder="Password" required>
+            <button type="submit">Login</button>
+        </form>
+        <a href="{% url 'register' %}">Create Account</a>
+    </div>
+
+    <button class="toggle" onclick="toggleMode()">Toggle Mode</button>
+    <script src="{% static 'theme.js' %}"></script>
+</body>
+</html>

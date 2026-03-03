@@ -1,0 +1,42 @@
+body {
+    font-family: Arial;
+    transition: 0.3s;
+}
+
+.container {
+    width: 300px;
+    margin: 100px auto;
+    padding: 20px;
+    text-align: center;
+    border-radius: 10px;
+}
+
+input, button {
+    width: 100%;
+    margin: 10px 0;
+    padding: 8px;
+}
+
+button {
+    cursor: pointer;
+}
+
+.dark {
+    background-color: #121212;
+    color: white;
+}
+
+.dark .container {
+    background-color: #1e1e1e;
+}
+
+.light {
+    background-color: white;
+    color: black;
+}
+
+.toggle {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+}
