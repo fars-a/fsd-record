@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Material Design Page</title>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" rel="stylesheet">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<style>
+body {
+    background: linear-gradient(to right, #ece9e6, #ffffff);
+}
+h3 {
+    margin-top: 30px;
+    font-weight: bold;
+}
+</style>
+</head>
+<body>
+<div class="container">
+    <h3 class="center-align">Material Design Cards</h3>
+    <div class="row">
+        <div class="col s12 m6 l4">
+            <div class="card hoverable">
+                <div class="card-image waves-effect waves-block waves-light">
+                    <img class="activator" src="https://picsum.photos/400/200">
+                    <span class="card-title">Nature</span>
+                </div>
+
+                <div class="card-content">
+                    <p>Beautiful nature scenery with Material Design effects.</p>
+                </div>
+
+                <div class="card-action center">
+                    <a class="btn waves-effect waves-light blue">
+                        <i class="material-icons left">visibility</i>
+                        View
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="col s12 m6 l4">
+            <div class="card hoverable">
+                <div class="card-image waves-effect waves-block waves-light">
+                    <img class="activator" src="https://picsum.photos/401/200">
+                    <span class="card-title activator">
+                        Click Me
+                        <i class="material-icons right">more_vert</i>
+                    </span>
+                </div>
+                <div class="card-content">
+                    <p>Click the icon to reveal hidden content.</p>
+                </div>
+                <div class="card-reveal">
+                    <span class="card-title">
+                        Revealed Info
+                        <i class="material-icons right">close</i>
+                    </span>
+                    <p>This is extra content revealed using Material Design.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col s12 m6 l4">
+            <div class="card hoverable">
+                <div class="card-image">
+                    <img src="https://picsum.photos/402/200">
+                    <span class="card-title">Technology</span>
+                </div>
+
+                <div class="card-content">
+                    <p>Modern UI components inspired by Material Design.</p>
+                </div>
+                <div class="card-action center">
+                    <a class="btn waves-effect waves-light green">
+                        <i class="material-icons left">explore</i>
+                        Explore
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+</body>
+</html>

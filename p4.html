@@ -4,33 +4,27 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Pricing Table</title>
-
 <style>
-
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: Arial, sans-serif;
 }
-
 body {
     background: #f4f4f4;
     text-align: center;
     padding: 40px 20px;
 }
-
 h1 {
     margin-bottom: 30px;
 }
-
 .pricing-container {
     display: flex;
     justify-content: center;
     gap: 20px;
     flex-wrap: wrap;
 }
-
 .pricing-card {
     background: white;
     padding: 25px;
@@ -39,24 +33,20 @@ h1 {
     box-shadow: 0 4px 12px rgba(0,0,0,0.15);
     transition: transform 0.3s, box-shadow 0.3s;
 }
-
 .pricing-card:hover {
     transform: translateY(-8px);
     box-shadow: 0 8px 20px rgba(0,0,0,0.25);
 }
-
 .plan {
     font-size: 22px;
     font-weight: bold;
     margin-bottom: 10px;
 }
-
 .price {
     font-size: 36px;
     color: #0b5394;
     margin: 15px 0;
 }
-
 button {
     background: #0b5394;
     color: white;
@@ -66,27 +56,20 @@ button {
     cursor: pointer;
     font-size: 16px;
 }
-
 button:hover {
     background: #083c6d;
 }
-
 @media (max-width: 768px) {
     .pricing-container {
         flex-direction: column;
         align-items: center;
     }
 }
-
 </style>
 </head>
-
 <body>
-
 <h1>Our Pricing Plans</h1>
-
 <div class="pricing-container">
-
     <div class="pricing-card">
         <div class="plan">Basic</div>
         <div class="price">₹199</div>
@@ -95,7 +78,6 @@ button:hover {
         </ul>
         <button>Choose Plan</button>
     </div>
-
     <div class="pricing-card">
         <div class="plan">Standard</div>
         <div class="price">₹499</div>
@@ -104,7 +86,6 @@ button:hover {
         </ul>
         <button>Choose Plan</button>
     </div>
-
     <div class="pricing-card">
         <div class="plan">Premium</div>
         <div class="price">₹999</div>
@@ -113,8 +94,6 @@ button:hover {
         </ul>
         <button>Choose Plan</button>
     </div>
-
 </div>
-
 </body>
 </html>

@@ -1,0 +1,190 @@
+/* ===== Base Theme ===== */
+
+body {
+    background-color: #f6f5f0;
+    /* warm paper tone */
+    /* Add the checked journal style background */
+    background-image:
+        linear-gradient(#e4e0d7 1px, transparent 1px),
+        linear-gradient(90deg, #e4e0d7 1px, transparent 1px);
+    background-size: 20px 20px;
+    font-family: 'Inter', sans-serif;
+    color: #2f2b2b;
+}
+
+/* subtle texture feeling */
+.container {
+    padding-top: 60px;
+    padding-bottom: 60px;
+}
+
+/* Headings */
+h1,
+h2,
+h3,
+h4,
+h5 {
+    font-family: 'Playfair Display', serif;
+    letter-spacing: 0.5px;
+    color: #1a1818;
+}
+
+/* Navbar - Minimal Editorial */
+.navbar {
+    background-color: transparent !important;
+    border-bottom: 2px solid #2f2b2b;
+    /* Thicker solid line for editorial feel */
+    padding-top: 15px;
+    padding-bottom: 15px;
+    margin-bottom: 30px;
+}
+
+.navbar-brand {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #1a1818 !important;
+    text-transform: lowercase;
+    font-style: italic;
+}
+
+/* Buttons */
+.btn-primary {
+    background-color: #2f2b2b;
+    color: #f6f5f0;
+    border: 1px solid #2f2b2b;
+    padding: 10px 24px;
+    font-size: 0.85rem;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    font-weight: 600;
+    border-radius: 0;
+    /* Sharp corners for aesthetics */
+    transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: #f6f5f0;
+    color: #2f2b2b;
+}
+
+.btn-outline-light {
+    border: 1px solid #2f2b2b;
+    color: #2f2b2b !important;
+    border-radius: 0;
+    background: transparent;
+}
+
+.btn-outline-light:hover {
+    background: #2f2b2b;
+    color: #f6f5f0 !important;
+}
+
+/* Override existing generated classes for consistency with user changes */
+.material-btn,
+.btn-success,
+.btn-warning {
+    background-color: #2f2b2b !important;
+    color: #f6f5f0 !important;
+    border: 1px solid #2f2b2b !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 0.85rem;
+}
+
+.material-btn:hover,
+.btn-success:hover,
+.btn-warning:hover {
+    background-color: transparent !important;
+    color: #2f2b2b !important;
+    transform: none !important;
+}
+
+/* ===== Journal Card Style ===== */
+
+.card {
+    background-color: #fdfdfc;
+    /* crisp white inner */
+    border: 1px solid #2f2b2b;
+    /* stark black borders */
+    border-radius: 0;
+    /* sharp edges */
+    padding: 30px;
+    box-shadow: 6px 6px 0px rgba(47, 43, 43, 1);
+    /* solid offset shadow for retro look */
+    transition: all 0.2s ease;
+}
+
+.material-card {
+    border-radius: 0;
+    box-shadow: 6px 6px 0px rgba(47, 43, 43, 1) !important;
+    border: 1px solid #2f2b2b;
+    background: #fdfdfc;
+}
+
+/* subtle lift */
+.card:hover,
+.material-card:hover {
+    transform: translate(-3px, -3px);
+    box-shadow: 9px 9px 0px rgba(47, 43, 43, 1) !important;
+}
+
+/* Product title */
+.card h5,
+.card-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.3rem;
+    font-weight: 700;
+    margin-bottom: 15px;
+    border-bottom: 1px dashed #ded8cf;
+    padding-bottom: 10px;
+}
+
+/* Description */
+.card p,
+.card-text {
+    color: #5a5550;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    font-family: 'Inter', sans-serif;
+}
+
+/* Price */
+.price {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.2rem;
+    color: #1a1818;
+    margin-top: 10px;
+    font-style: italic;
+}
+
+/* Form Styling - Soft Journal Lines */
+.form-control,
+.material-input {
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid #2f2b2b;
+    border-radius: 0;
+    padding: 12px 0;
+    font-family: 'Inter', serif;
+    color: #1a1818;
+    box-shadow: none !important;
+}
+
+.form-control:focus,
+.material-input:focus {
+    border-bottom: 2px solid #2f2b2b;
+    background-color: rgba(255, 255, 255, 0.4);
+}
+
+/* Cart total */
+.cart-total {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.6rem;
+    margin-top: 25px;
+    color: #1a1818;
+    border-top: 2px solid #2f2b2b;
+    padding-top: 15px;
+}

@@ -2,24 +2,21 @@
 <html>
 <head>
 <title>Dynamic Search Filter</title>
-
 <style>
 body {
     font-family: Arial;
     padding: 40px;
+    background-color: rgb(193, 214, 207);
 }
-
 #search {
     padding: 10px;
     width: 250px;
     margin-bottom: 20px;
 }
-
 ul {
     list-style: none;
     padding: 0;
 }
-
 li {
     padding: 8px;
     background: #f4f4f4;
@@ -27,13 +24,9 @@ li {
 }
 </style>
 </head>
-
 <body>
-
 <h2>Search Students</h2>
-
 <input type="text" id="search" placeholder="Type to search...">
-
 <ul id="list">
     <li>Alice</li>
     <li>Bob</li>
@@ -42,26 +35,19 @@ li {
     <li>Emma</li>
     <li>Farsan</li>
 </ul>
-
 <script>
 const searchBox = document.getElementById("search");
 const items = document.querySelectorAll("#list li");
-
 searchBox.addEventListener("keyup", function() {
-
     let value = searchBox.value.toLowerCase();
-
     items.forEach(function(item) {
-
         if (item.textContent.toLowerCase().includes(value)) {
             item.style.display = "block";   
         } else {
             item.style.display = "none";    
         }
-
     });
 });
 </script>
-
 </body>
 </html>

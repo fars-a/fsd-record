@@ -4,41 +4,34 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Flexbox Layout Demo</title>
-
 <style>
-
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: Arial, sans-serif;
 }
-
 header {
     background: #057c29;
     color: white;
     text-align: center;
     padding: 20px;
 }
-
 nav {
     display: flex;
     justify-content: space-between;
     background: #333;
     padding: 15px;
 }
-
 nav div {
     color: white;
     font-weight: bold;
 }
-
 main {
     display: flex;
     padding: 20px;
     gap: 20px;
 }
-
 .box {
     flex: 1;
     background: #f4f4f4;
@@ -47,13 +40,11 @@ main {
     border-radius: 10px;
     font-size: 20px;
 }
-
 .card-container {
     display: flex;
     justify-content: space-around;
     padding: 20px;
 }
-
 .card {
     background: #de470c;
     color: white;
@@ -62,7 +53,6 @@ main {
     text-align: center;
     border-radius: 10px;
 }
-
 .center-section {
     display: flex;
     justify-content: center;
@@ -71,67 +61,53 @@ main {
     background: #e2e2e2;
     font-size: 22px;
 }
-
 footer {
     background: #222;
     color: white;
     text-align: center;
     padding: 15px;
 }
-
 @media (max-width: 768px) {
-
     main {
         flex-direction: column;
     }
-
     .card-container {
         flex-direction: column;
         align-items: center;
         gap: 15px;
     }
-
     nav {
         flex-direction: column;
         align-items: center;
         gap: 10px;
     }
 }
-
 </style>
 </head>
-
-<body>
-    
+<body> 
 <header>
     <h1>CSS Flexbox Layout Demo</h1>
 </header>
-
 <nav>
     <div>Logo</div>
     <div>Home</div>
     <div>About</div>
     <div>Contact</div>
 </nav>
-
 <main>
     <div class="box">Content Area</div>
     <div class="box">Sidebar</div>
 </main>
-
 <section class="card-container">
     <div class="card">Card 1</div>
     <div class="card">Card 2</div>
     <div class="card">Card 3</div>
 </section>
-
 <section class="center-section">
     Centered using Flexbox
 </section>
-
 <footer>
     <p>© 2026 Flexbox Demo</p>
 </footer>
-
 </body>
 </html>

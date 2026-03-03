@@ -4,20 +4,16 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Landing Page</title>
-
 <style>
-
 html {
     scroll-behavior: smooth;
 }
-
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: Arial, sans-serif;
 }
-
 nav {
     background: #0b5394;
     color: white;
@@ -25,35 +21,29 @@ nav {
     justify-content: space-between;
     padding: 15px 40px;
 }
-
 nav ul {
     list-style: none;
     display: flex;
     gap: 20px;
 }
-
 nav a {
     color: white;
     text-decoration: none;
     font-weight: bold;
 }
-
 nav a:hover {
     text-decoration: underline;
 }
-
 .hero {
     background: linear-gradient(to right, #0b5394, #de470c);
     color: white;
     text-align: center;
     padding: 100px 20px;
 }
-
 .hero h1 {
     font-size: 42px;
     margin-bottom: 15px;
 }
-
 .hero button {
     padding: 12px 25px;
     border: none;
@@ -63,69 +53,57 @@ nav a:hover {
     border-radius: 6px;
     cursor: pointer;
 }
-
 .features {
     padding: 50px 20px;
     text-align: center;
 }
-
 .feature-container {
     display: flex;
     justify-content: center;
     gap: 20px;
     flex-wrap: wrap;
 }
-
 .feature {
     background: #f4f4f4;
     padding: 25px;
     width: 250px;
     border-radius: 10px;
 }
-
 .about {
     background: #e2e2e2;
     padding: 50px 20px;
     text-align: center;
 }
-
 .contact {
     padding: 50px 20px;
     text-align: center;
 }
-
 .contact input, .contact textarea {
     width: 300px;
     padding: 10px;
     margin: 10px;
 }
-
 .contact button {
     padding: 10px 20px;
     background: #0b5394;
     color: white;
     border: none;
 }
-
 footer {
     background: #222;
     color: white;
     text-align: center;
     padding: 15px;
 }
-
 @media (max-width: 768px) {
     nav {
         flex-direction: column;
         align-items: center;
     }
 }
-
 </style>
 </head>
-
 <body>
-
 <nav>
     <h2>MyBrand</h2>
     <ul>
@@ -135,13 +113,11 @@ footer {
         <li><a href="#contact">Contact</a></li>
     </ul>
 </nav>
-
 <section id="home" class="hero">
     <h1>Build Your Future Today</h1>
     <p>Modern solutions for modern problems</p>
     <button>Get Started</button>
 </section>
-
 <section id="features" class="features">
     <h2>Our Features</h2>
     <div class="feature-container">
@@ -159,7 +135,6 @@ footer {
         </div>
     </div>
 </section>
-
 <section id="about" class="about">
     <h2>About Us</h2>
     <p>
@@ -167,7 +142,6 @@ footer {
     in the digital world.
     </p>
 </section>
-
 <section id="contact" class="contact">
     <h2>Contact Us</h2>
     <input type="text" placeholder="Your Name"><br>
@@ -175,10 +149,8 @@ footer {
     <textarea placeholder="Your Message"></textarea><br>
     <button>Send Message</button>
 </section>
-
 <footer>
     <p>© 2026 MyBrand | All Rights Reserved</p>
 </footer>
-
 </body>
 </html>

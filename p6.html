@@ -3,7 +3,6 @@
 <head>
 <meta charset="UTF-8">
 <title>Registration Form</title>
-
 <style>
 body { 
     font-family: Arial; 
@@ -26,13 +25,13 @@ button {
     background-color: rgb(47, 201, 114);
     width: 320px;
     padding: 25px;
+    margin-top: 100px;
 }
 </style>
 </head>
 <body>
 <div class="registration-container">
 <h2>Registration Form</h2>
-
 <form onsubmit="return validateForm()">
     <input type="text" id="name" placeholder="Name">
     <input type="text" id="email" placeholder="Email">
@@ -44,45 +43,36 @@ button {
 </div>
 <script>
 function validateForm() {
-
     let name = document.getElementById("name").value.trim();
     let email = document.getElementById("email").value.trim();
     let password = document.getElementById("password").value;
     let confirm = document.getElementById("confirm").value;
     let phone = document.getElementById("phone").value.trim();
-
     let emailPattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
     let phonePattern = /^[0-9]{10}$/;
-
     if (name === "") {
         alert("Name is required");
         return false;
     }
-
     if (!email.match(emailPattern)) {
         alert("Enter a valid email");
         return false;
     }
-
     if (password.length < 6) {
         alert("Password must be at least 6 characters");
         return false;
     }
-
     if (password !== confirm) {
         alert("Passwords do not match");
         return false;
     }
-
     if (!phone.match(phonePattern)) {
         alert("Enter valid 10-digit phone number");
         return false;
     }
-
     alert("Registration Successful!");
     return true;
 }
 </script>
-
 </body>
 </html>

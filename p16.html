@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Cartoonic Bookstore</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@400;700&display=swap" rel="stylesheet">
+<style>
+body {
+    font-family: 'Comic Neue', cursive;
+    background: #f0f4f8;
+}
+
+/* Navbar */
+.navbar {
+    border-radius: 0 0 20px 20px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.1);
+}
+.navbar-brand {
+    font-size: 1.8rem;
+}
+
+/* Hero */
+.hero {
+    background: linear-gradient(135deg,#f59e0b,#6366f1);
+    color: white;
+    border-radius: 25px;
+    padding: 30px;
+    margin: 20px 0;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    text-align: center;
+}
+
+/* Chips */
+.chip {
+    background: white;
+    border-radius: 30px;
+    padding: 6px 16px;
+    margin: 5px;
+    display: inline-block;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    cursor: pointer;
+    transition: 0.3s;
+    font-weight: bold;
+}
+.chip:hover {
+    background: #6366f1;
+    color: white;
+    transform: scale(1.1);
+}
+
+/* Book Cards */
+.book {
+    background: white;
+    border-radius: 20px;
+    padding: 15px;
+    text-align: center;
+    box-shadow: 0 6px 14px rgba(0,0,0,0.1);
+    transition: 0.3s;
+}
+.book img {
+    height: 140px; /* Reduced height */
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 8px;
+}
+.book h6 {
+    font-weight: bold;
+    margin-bottom: 4px;
+    font-size: 0.95rem;
+}
+.book p {
+    font-size: 0.9rem;
+    margin-bottom: 8px;
+}
+.book button {
+    border-radius: 20px;
+    font-size: 0.85rem;
+}
+
+/* Footer */
+.footer {
+    margin-top: 30px;
+    background: #1f2937;
+    color: white;
+    padding: 15px;
+    border-radius: 20px 20px 0 0;
+    text-align: center;
+    font-size: 0.9rem;
+}
+</style>
+</head>
+<body>
+
+<nav class="navbar bg-white px-4 d-flex justify-content-between">
+    <span class="navbar-brand text-primary">Cartoon Books</span>
+    <div class="d-flex gap-2">
+        <input type="text" class="form-control" placeholder="Search books" style="width:180px">
+        <button class="btn btn-primary btn-sm rounded-pill">Login</button>
+    </div>
+</nav>
+
+<div class="container">
+    <div class="hero">
+        <h2>Explore Fun Cartoon Books!</h2>
+        <p>Discover great reads with colorful covers</p>
+    </div>
+
+    <div class="text-center mb-2">
+        <span class="chip">Fiction</span>
+        <span class="chip">Comics</span>
+        <span class="chip">Kids</span>
+        <span class="chip">Fantasy</span>
+        <span class="chip">Mystery</span>
+    </div>
+
+    <div class="row g-3">
+        <div class="col-6 col-md-3">
+            <div class="book">
+                <img src="image1.png" alt="Book Cover 1">
+                <h6>The Adventure</h6>
+                ⭐⭐⭐⭐☆
+                <p class="text-success">₹499</p>
+                <button class="btn btn-outline-primary btn-sm">Add to Cart</button>
+            </div>
+        </div>
+        <div class="col-6 col-md-3">
+            <div class="book">
+                <img src="image2.png" alt="Book Cover 2">
+                <h6>Funny Tales</h6>
+                ⭐⭐⭐⭐⭐
+                <p class="text-success">₹299</p>
+                <button class="btn btn-outline-primary btn-sm">Add to Cart</button>
+            </div>
+        </div>
+        <div class="col-6 col-md-3">
+            <div class="book">
+                <img src="image3.png" alt="Book Cover 3">
+                <h6>Magic World</h6>
+                ⭐⭐⭐⭐☆
+                <p class="text-success">₹599</p>
+                <button class="btn btn-outline-primary btn-sm">Add to Cart</button>
+            </div>
+        </div>
+        <div class="col-6 col-md-3">
+            <div class="book">
+                <img src="image4.png" alt="Book Cover 4">
+                <h6>Mystery Tales</h6>
+                ⭐⭐⭐⭐☆
+                <p class="text-success">₹399</p>
+                <button class="btn btn-outline-primary btn-sm">Add to Cart</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        © 2026 Cartoonic Bookstore
+    </div>
+</div>
+
+</body>
+</html>

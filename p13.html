@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Day Night Theme</title>
+<style>
+body {
+    margin: 0;
+    text-align: center;
+    transition: 0.5s;
+    font-family: Arial;
+}
+
+.day {
+    background-color: #ececec;
+    color: #333;
+}
+
+.night {
+    background-color: #020811cf;
+    color: white;
+}
+
+.container {
+    margin-top: 100px;
+}
+
+img {
+    width: 200px;
+}
+
+button {
+    padding: 12px 25px;
+    font-size: 16px;
+    border-radius: 25px;
+    border: none;
+    background: #e60023;
+    color: white;
+    cursor: pointer;
+    margin-top: 30px;
+}
+</style>
+
+</head>
+
+<body class="day">
+
+<div class="container">
+
+    <img id="icon" src="https://cdn-icons-png.flaticon.com/512/869/869869.png">
+
+    <h1 id="label">Day</h1>
+
+    <button onclick="changeTheme()">Change Theme</button>
+
+</div>
+
+<script>
+function changeTheme() {
+    var body = document.body;
+    var icon = document.getElementById("icon");
+    var label = document.getElementById("label");
+
+    if (body.className === "day") {
+        body.className = "night";
+        icon.src = "https://cdn-icons-png.flaticon.com/512/581/581601.png";
+        label.innerHTML = "Night";
+    } else {
+        body.className = "day";
+        icon.src = "https://cdn-icons-png.flaticon.com/512/869/869869.png";
+        label.innerHTML = "Day";
+    }
+}
+</script>
+
+</body>
+</html>

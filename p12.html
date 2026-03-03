@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Weather App</title>
+<style>
+body {
+    font-family: Arial, sans-serif;
+    background: #f5f5f5;
+    text-align: center;
+}
+h1 { 
+    color: #e60023; 
+}
+.search { 
+    margin: 20px; 
+}
+input { 
+    padding: 10px; width: 250px; border-radius: 20px; border: 1px solid #ccc; 
+}
+button { 
+    padding: 10px 20px; 
+    border-radius: 20px; 
+    background: #e60023; 
+    color: white; 
+    border: none; 
+    cursor: pointer; 
+}
+.container { 
+    display: flex; 
+    justify-content: center; 
+    margin-top: 30px; 
+}
+.card { 
+    width: 300px; 
+    background: white; 
+    border-radius: 20px; 
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2); 
+    padding: 20px; }
+.card img { 
+    width: 120px; 
+}
+.details { 
+    text-align: left; 
+    margin-top: 15px; 
+}
+</style>
+</head>
+<body>
+
+<h1>Weather App</h1>
+
+<div class="search">
+    <input type="text" id="city" placeholder="Enter city name">
+    <button onclick="getWeather()">Search</button>
+</div>
+
+<div class="container">
+    <div class="card">
+        <img id="icon" src="https://cdn-icons-png.flaticon.com/512/869/869869.png">
+        <h2 id="cityName">City</h2>
+        <div class="details">
+            <p id="temp">Temperature:</p>
+            <p id="condition">Condition:</p>
+            <p id="humidity">Humidity:</p>
+            <p id="wind">Wind:</p>
+        </div>
+    </div>
+</div>
+
+<script>
+async function getWeather() {
+    const city = document.getElementById("city").value.trim();
+    if(!city) { alert("Enter a city"); return; }
+
+    try {
+        const geoRes = await fetch(`https://nominatim.openstreetmap.org/search?format=json&q=${city}`);
+        const geoData = await geoRes.json();
+        if(!geoData || geoData.length == 0) { alert("City not found"); return; }
+        const lat = geoData[0].lat;
+        const lon = geoData[0].lon;
+
+        const weatherRes = await fetch(`https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${lon}&current_weather=true`);
+        const weatherData = await weatherRes.json();
+        const weather = weatherData.current_weather;
+
+        document.getElementById("cityName").innerHTML = city;
+        document.getElementById("temp").innerHTML = "🌡 Temperature: " + weather.temperature + " °C";
+        document.getElementById("wind").innerHTML = "🌬 Wind: " + weather.windspeed + " m/s";
+        document.getElementById("humidity").innerHTML = "💧 Humidity: N/A"; 
+        document.getElementById("condition").innerHTML = "☁ Condition: " + (weather.weathercode || "Clear");
+
+        let iconUrl = "https://cdn-icons-png.flaticon.com/512/869/869869.png"; // default
+        if(weather.weathercode == 1) iconUrl = "https://cdn-icons-png.flaticon.com/512/1163/1163661.png"; // sunny
+        else if(weather.weathercode == 3) iconUrl = "https://cdn-icons-png.flaticon.com/512/1163/1163624.png"; // cloudy
+        else if(weather.weathercode == 61) iconUrl = "https://cdn-icons-png.flaticon.com/512/1163/1163632.png"; // rain
+        document.getElementById("icon").src = iconUrl;
+
+    } catch(err) {
+        alert("Failed to fetch weather!");
+        console.error(err);
+    }
+}
+</script>
+
+</body>
+</html>
