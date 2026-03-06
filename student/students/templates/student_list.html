@@ -1,8 +1,0 @@
-<h2>Student List</h2>
-<a href="{% url 'logout' %}">Logout</a>
-<hr>
-{% for student in students %}
-    <p>
-        {{ student.name }} - {{ student.course }}
-    </p>
-{% endfor %}

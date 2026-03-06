@@ -1,0 +1,27 @@
+<h2>Create Post</h2>
+
+<form method="post">
+    {% csrf_token %}
+
+    {{ form.non_field_errors }}
+
+    <div>
+        <label>Title:</label>
+        {{ form.title }}
+        {{ form.title.errors }}
+    </div>
+
+    <div>
+        <label>Content:</label>
+        {{ form.content }}
+        {{ form.content.errors }}
+    </div>
+
+    <div>
+        <label>Author:</label>
+        {{ form.author }}
+        {{ form.author.errors }}
+    </div>
+
+    <button type="submit">Submit</button>
+</form>
